@@ -93,7 +93,7 @@ def run_cmake(config, args):
     if is_windows():
         cmake_args += ["-DPYTHONVER:STRING=" + pyver]
 
-    if is_linux() or is_freebsd():
+    if is_linux() or is_freebsd() or is_macos():
         cmake_args += ["-DPYTHONVERDOT:STRING=" + pyver_dot]
 
     # Libraries
