@@ -70,7 +70,7 @@ def get_panda_sdk_path():
     import panda3d
 
     # Path of the module
-    p3d_module = dirname(panda3d.__file__)
+    p3d_module = dirname(realpath(panda3d.__file__))
     p3d_sdk = join(p3d_module, "..")
 
     # Convert it to a valid filename
@@ -83,7 +83,7 @@ def get_panda_core_lib_path():
     """ Returns of the path of the core panda3d module, either core.pyd on windows
     or core.so on linux. This is an absolute path """
     import panda3d.core
-    return panda3d.core.__file__
+    return realpath(panda3d.core.__file__)
 
 
 def get_panda_bin_path():
